@@ -1,0 +1,170 @@
+/********************************************
+ *                VARIABLES                 *
+ ********************************************/
+:root {
+    --primary-color: #ffffff;
+    --primary-color-rgb: 255, 255, 255; /*	Prefix a color variable with RGB to convert the hex output to RGB. */
+    --accent-color: #326294;
+    --background-color: #E7F1FB;
+}
+
+/********************************************
+ *               TYPOGRAPHY                 *
+ ********************************************/
+ /* 
+ Customizable Primary color (Header background, Post background, Live mode controls background)
+Customizable Accent color (Text, Icons)
+ */
+body {
+    color: var(--accent-color);
+    font-family: 'Dongle', sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 0.8;
+}
+
+.font-avenir {
+    font-family: 'Avenir', sans-serif;
+}
+
+.font-fix-dongle {
+    display: block;
+    margin-bottom: -5px;
+}
+
+/********************************************
+ *                  THEME                   *
+ ********************************************/
+.container {
+    margin: 0 auto;
+    max-width: 540px;
+}
+
+body {
+    background-color: var(--background-color);
+    /* TO DO: Background image */
+}
+
+/* Header */
+.header {
+    position: fixed;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    padding: 4px 4px 4px 80px;
+    background-color: var(--primary-color);
+    border: 6px solid rgba(var(--primary-color-rgb), .5);
+    border-left: none;
+    border-radius: 100px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    /* Cross-browser semi-transparent border */
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+.header-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: gray;
+}
+
+/*  Navigation */
+
+/* Posts */
+.post-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 80px;
+}
+
+.post {
+    max-width: 100%;
+    background-color: var(--primary-color);
+    /* TO DO: delete height */
+    height: 300px;
+}
+
+/* Pagination */
+.pagination {
+    width: 240px;
+    padding: 12px;
+    margin: 0 auto 20px;
+    background-color: rgba(var(--primary-color-rgb), .5);
+    border-top-left-radius: 80px;
+    border-top-right-radius: 80px;
+    text-align: center;
+}
+/*  Footer */
+.footer {
+    position: fixed;
+    z-index: 10;
+    bottom: 0px;
+    width: 100%;
+    height: 20px;
+    background-color: rgba(var(--primary-color-rgb), .5);
+}
+
+/*  Sims Info */
+.sims-info {
+    position: absolute;
+    bottom: 0;
+    padding-left: 80px;
+}
+
+.sims-info::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(var(--primary-color-rgb), .5);
+    width: 80px;
+    height: 250px;
+}
+
+.emotion {
+
+}
+
+.emotion span {
+    font-size: 24px;
+    text-transform: uppercase;
+    transform: rotate(90deg);
+    /* Cross-browser text rotation*/
+    -webkit-transform: rotate(-90deg); /* Safari */
+    -moz-transform: rotate(-90deg); /* Firefox */
+    -ms-transform: rotate(-90deg); /* IE */
+    -o-transform: rotate(-90deg); /* Opera */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); /* Internet Explorer */ 
+}
+
+.emotion-confident {}
+
+.info {
+    display: flex;
+    align-items: center;
+    padding: 6px 12px;
+    background-color: rgba(var(--primary-color-rgb), .5);
+    border-top-right-radius: 20px;
+}
+
+.info > span:first-child {
+    font-size: 40px;
+}
+
+.info > span:nth-child(2) {
+    font-size:24px;
+    font-weight: 300;
+}
+
+/* .sims-info::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    background-color: red;
+    width: 80px;
+    height: 250px;
+} */
