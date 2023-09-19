@@ -41,8 +41,9 @@ body {
 }
 
 body {
-    background-color: var(--background-color);
+    /* background-color: var(--background-color); */
     /* TO DO: Background image */
+    background: rgb(0, 0, 0);
 }
 
 /* Header */
@@ -92,26 +93,32 @@ body {
 .pagination {
     width: 240px;
     padding: 12px;
-    margin: 0 auto 20px;
+    margin: 0 auto 16px;
     background-color: rgba(var(--primary-color-rgb), .5);
     border-top-left-radius: 80px;
     border-top-right-radius: 80px;
     text-align: center;
 }
+
 /*  Footer */
 .footer {
     position: fixed;
     z-index: 10;
-    bottom: 0px;
+    bottom: 0;
+    display: flex;
+    align-items: flex-end;
     width: 100%;
-    height: 20px;
+}
+
+.footer-bar {
+    width: 100%;
+    height: 16px;
     background-color: rgba(var(--primary-color-rgb), .5);
 }
 
 /*  Sims Info */
 .sims-info {
-    position: absolute;
-    bottom: 0;
+    flex-shrink: 0;
     padding-left: 80px;
 }
 
@@ -125,14 +132,33 @@ body {
     height: 250px;
 }
 
-.emotion {
+.sims-info-avatar {
+    position: absolute;
+    bottom: 27px;
+}
 
+.emotion {
+    display: flex;
+    width: 216px;
+    height: 184px;
+    border-radius: 0px 194px 0px 12px;
+}
+
+.emotion-confident {
+    background: radial-gradient(150.5% 145.97% at 0% 100%, #418ACB 0%, rgba(65, 138, 203, 0.80) 36.56%, rgba(65, 138, 203, 0.60) 54.69%, rgba(37, 70, 99, 0.00) 65.63%); 
 }
 
 .emotion span {
+    position: absolute;
+    bottom: 16px;
+    padding-top: 12px;
+    color: var(--primary-color);
+    font-family: 'Avenir LT Pro', sans-serif;                     
     font-size: 24px;
+    font-weight: 300;
     text-transform: uppercase;
     transform: rotate(90deg);
+    transform-origin:  0 0;
     /* Cross-browser text rotation*/
     -webkit-transform: rotate(-90deg); /* Safari */
     -moz-transform: rotate(-90deg); /* Firefox */
@@ -141,23 +167,38 @@ body {
     filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); /* Internet Explorer */ 
 }
 
-.emotion-confident {}
 
 .info {
+    overflow-y: hidden;
     display: flex;
     align-items: center;
-    padding: 6px 12px;
-    background-color: rgba(var(--primary-color-rgb), .5);
+    /* padding: 6px 12px; */
+    /* background-color: rgba(var(--primary-color-rgb), .5); */
     border-top-right-radius: 20px;
 }
 
+.info span {
+    height: 100%;
+    background-color: rgba(var(--primary-color-rgb), .5);
+}
+
 .info > span:first-child {
+    padding: 4px 12px;
     font-size: 40px;
 }
 
 .info > span:nth-child(2) {
+    padding: 10px 16px 10px 12px;
+    max-height: 40px;
     font-size:24px;
     font-weight: 300;
+}
+
+.info .border {
+    border-right: 2px solid transparent;
+    /* Cross-browser semi-transparent border */
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
 }
 
 /* .sims-info::after {
