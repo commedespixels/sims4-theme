@@ -7,6 +7,9 @@
     --accent-color: #326294;
     --link-hover-color: #1a3149;
     --background-color: #E7F1FB;
+    --menu-background-color: #F3F8FD;
+    --custom-emotion-background-color: #e38515;
+    --custom-emotion-background-color-rgb: 227, 133, 21;
 }
 
 /********************************************
@@ -41,10 +44,13 @@ body {
     max-width: 540px;
 }
 
+html {
+}
+
 body {
     /* background-color: var(--background-color); */
-    /* TO DO: Background image */
-    background: rgb(0, 0, 0);
+    background: url(willow-creek-wallpaper.png) no-repeat center center fixed;
+    background-size: cover;
 }
 
 a:hover,
@@ -110,8 +116,9 @@ a:focus-visible {
 }
 
 .hexagone-background {
-    color: var(--background-color);
+    color: var(--menu-background-color);
 }
+
 .hexagone-border {
     color:var(--accent-color)
 }
@@ -121,25 +128,68 @@ a:focus-visible {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding-top: 80px;
+    padding: 80px 0;
 }
 
 .post {
     max-width: 100%;
-    background-color: var(--primary-color);
-    /* TO DO: delete height */
+    /* background-color: var(--primary-color); */
+    background-color: rgba(var(--primary-color-rgb), .5);
     height: 300px;
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 16px;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.post-author {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.post-author div:first-child {
+    width: 40px;
+    height: 40px;
+}
+
+.post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 16px;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.post-actions {
+    display: flex;
+    font-size: 16px;
+}
+
+.post-action {
+    background-color: #FFFFFF;
+    padding: 8px;
 }
 
 /* Pagination */
 .pagination {
+    position: fixed;
+    bottom: 16px;
+    left:0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 32px;
     width: 240px;
     padding: 4px 0;
-    margin: 0 auto 16px;
+    margin: 0 auto;
     background-color: rgba(var(--primary-color-rgb), .5);
     border-top-left-radius: 80px;
     border-top-right-radius: 80px;
@@ -178,25 +228,67 @@ a:focus-visible {
     height: 250px;
 }
 
+.sims-info::after {
+    content: "";
+    position: absolute;
+    bottom: 35px;
+    width: 12px;
+    height: 12px;
+    background-color: rgba(var(--primary-color-rgb), .5);
+}
+
 .sims-info-avatar {
     position: absolute;
-    bottom: 27px;
+    bottom: -8px;
 }
 
 .emotion {
+    position: absolute;
+    bottom: 35px;
+    z-index: 20;
     display: flex;
     width: 216px;
     height: 184px;
     border-radius: 0px 194px 0px 12px;
 }
 
+.emotion-custom {
+    background: radial-gradient(150.5% 145.97% at 0% 100%, var(--custom-emotion-background-color) 0%, rgba(var(--custom-emotion-background-color-rgb), 0.80) 36.56%, rgba(var(--custom-emotion-background-color-rgb), 0.60) 54.69%, rgba(129, 126, 123, 0.00) 65.63%); 
+}
+.emotion-playful {
+    background: radial-gradient(150.5% 145.97% at 0% 100%, #BB36AD 0%, rgba(187, 54, 173, 0.80) 36.56%, rgba(187, 54, 173, 0.60) 54.69%, rgba(87, 33, 81, 0.00) 65.63%); 
+}
+.emotion-happy {
+    background: radial-gradient(150.5% 145.97% at 0% 100%, #1DB84D 0%, rgba(29, 184, 77, 0.80) 36.56%, rgba(29, 184, 77, 0.60) 54.69%, rgba(25, 113, 52, 0.00) 65.63%); 
+}
 .emotion-confident {
     background: radial-gradient(150.5% 145.97% at 0% 100%, #418ACB 0%, rgba(65, 138, 203, 0.80) 36.56%, rgba(65, 138, 203, 0.60) 54.69%, rgba(37, 70, 99, 0.00) 65.63%); 
+}
+.emotion-focused {
+    background: radial-gradient(150.5% 145.97% at 0% 100%, #7035F0 0%, rgba(112, 53, 240, 0.80) 36.56%, rgba(112, 53, 240, 0.60) 54.69%, rgba(64, 42, 112, 0.00) 65.63%); 
+}
+.emotion-possessed {
+    background: radial-gradient(150.5% 145.97% at 0% 100%, #3B3C63 0%, rgba(59, 60, 99, 0.80) 36.56%, rgba(59, 60, 99, 0.60) 54.69%, rgba(46, 47, 75, 0.00) 65.63%); 
+}
+.emotion-energized {
+    background: radial-gradient(150.5% 145.97% at 0% 100%, #A0DD29 0%, rgba(160, 221, 41, 0.80) 36.56%, rgba(160, 221, 41, 0.60) 54.69%, rgba(108, 144, 36, 0.00) 65.63%); 
+}
+.emotion-inspired {
+    background: radial-gradient(150.5% 145.97% at 0% 100%, #1EC5CD 0%, rgba(30, 197, 205, 0.80) 36.56%, rgba(30, 197, 205, 0.60) 54.69%, rgba(37, 107, 111, 0.00) 65.63%); 
+}
+.emotion-dazed {
+    background: radial-gradient(150.5% 145.97% at 0% 100%, #826FD3 0%, rgba(130, 111, 211, 0.80) 36.56%, rgba(130, 111, 211, 0.60) 54.69%, rgba(65, 54, 112, 0.00) 65.63%); 
+}
+.emotion-asleep {
+    background: radial-gradient(150.5% 145.97% at 0% 100%, #353359 0%, rgba(53, 51, 89, 0.80) 36.56%, rgba(53, 51, 89, 0.60) 54.69%, rgba(48, 46, 77, 0.00) 65.63%); 
+}
+.emotion-bored {
+    background: radial-gradient(150.5% 145.97% at 0% 100%, #7D8884 0%, rgba(125, 136, 132, 0.80) 36.56%, rgba(125, 136, 132, 0.60) 54.69%, rgba(56, 63, 60, 0.00) 65.63%); 
 }
 
 .emotion span {
     position: absolute;
-    bottom: 16px;
+    bottom: -24px;
     padding-top: 12px;
     color: var(--primary-color);
     font-family: 'Avenir LT Pro', sans-serif;                     
