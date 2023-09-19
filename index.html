@@ -15,23 +15,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/avenir-lt-pro" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 </head>
 <body>
     <header class="header">
         <h1 class="font-fix-dongle"><a href="#">Comme des Sims</a></h1>
         <div class="header-avatar">
             <!-- <img src="" alt="Blog's avatar"> -->
-        </div>
-
-        <div class="hidden">
-            <button class="">Menu</button>
-            <nav class=""">
-                <ul>
-                    <li><a href="#">Ask</a></li>
-                    <li><a href="#">Pictures</a></li>
-                    <li><a href="#">Ressources</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
     <main class="container post-container">
@@ -42,7 +34,9 @@
         <article class="post"></article>
         <article class="post"></article>
         <div class="pagination">
+            <i class="bi bi-caret-left-fill font-fix-dongle"></i>
             <span class="font-fix-dongle">1/20</span>
+            <i class="bi bi-caret-right-fill font-fix-dongle"></i>
         </div>
     </main>
     <footer class="footer">
@@ -57,6 +51,23 @@
             </div>
         </div>
         <div class="footer-bar"></div>
+        <div class="menu">
+            <button class="menu-button">
+                <svg class="hexagone" width="56" height="64" viewBox="0 0 56 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="hexagone-background" d="M28 0L55.7128 16V48L28 64L0.287188 48V16L28 0Z" fill="currentColor"/>
+                    <path class="hexagone-border" d="M1.28719 16.5774L28 1.1547L54.7128 16.5774V47.4226L28 62.8453L1.28719 47.4226V16.5774Z" stroke="currentColor" stroke-opacity="0.6" stroke-width="2"/>
+                </svg>
+                <i class="bi bi-list"></i>
+                <span class="sr-only">Menu</span>
+            </button>
+            <nav class="navigation">
+                <ul>
+                    <li><a href="#"><i class="bi bi-chat-square-fill"></i><span class="sr-only">Ask</span></a></li>
+                    <li><a href="#"><i class="bi bi-images"></i><span class="sr-only">Screenshots</span></a></li>
+                    <li><a href="#"><i class="bi bi-bookmarks-fill"></i><span class="sr-only">Resources</span></a></li>
+                </ul>
+            </nav>
+        </div>
     </footer>
 </body>
 </html>
