@@ -5,6 +5,7 @@
     --primary-color: #ffffff;
     --primary-color-rgb: 255, 255, 255; /*	Prefix a color variable with RGB to convert the hex output to RGB. */
     --accent-color: #326294;
+    --link-hover-color: #1a3149;
     --background-color: #E7F1FB;
 }
 
@@ -46,6 +47,11 @@ body {
     background: rgb(0, 0, 0);
 }
 
+a:hover,
+a:focus-visible {
+    color: var(--link-hover-color);
+}
+
 /* Header */
 .header {
     position: fixed;
@@ -73,6 +79,42 @@ body {
 }
 
 /*  Navigation */
+.menu {
+    position: relative;
+    display: flex;
+    padding-left: 36px;
+    padding-right: 80px;
+    background-color: rgba(var(--primary-color-rgb), .5);
+}
+
+.menu-button i {
+    position: absolute;
+    left: -13px;
+    bottom: 13px;
+    color: var(--accent-color);
+}
+.navigation ul {
+    display: flex;
+    font-size: 20px;
+}
+
+.navigation a {
+    display: inline-block;
+    padding: 12px 8px 8px;
+}
+
+.hexagone {
+    position: absolute;
+    left: -28px;
+    bottom: 0;
+}
+
+.hexagone-background {
+    color: var(--background-color);
+}
+.hexagone-border {
+    color:var(--accent-color)
+}
 
 /* Posts */
 .post-container {
@@ -91,8 +133,12 @@ body {
 
 /* Pagination */
 .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
     width: 240px;
-    padding: 12px;
+    padding: 4px 0;
     margin: 0 auto 16px;
     background-color: rgba(var(--primary-color-rgb), .5);
     border-top-left-radius: 80px;
