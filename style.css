@@ -15,20 +15,13 @@
 /********************************************
  *               TYPOGRAPHY                 *
  ********************************************/
- /* 
- Customizable Primary color (Header background, Post background, Live mode controls background)
-Customizable Accent color (Text, Icons)
- */
 body {
+    /* Theme Option: Text Color */
     color: var(--accent-color);
     font-family: 'Dongle', sans-serif;
     font-size: 28px;
     font-weight: 300;
     line-height: 0.8;
-}
-
-.font-avenir {
-    font-family: 'Avenir', sans-serif;
 }
 
 .font-fix-dongle {
@@ -37,26 +30,32 @@ body {
 }
 
 /********************************************
- *                  THEME                   *
+ *                  COMMON                  *
  ********************************************/
-.container {
-    margin: 0 auto;
-    max-width: 540px;
-}
-
-html {
-}
-
+ 
 body {
-    /* background-color: var(--background-color); */
+    /* Theme Option: Background Color */
+    background-color: var(--background-color);
+
+    /*  Theme Option: Background Image */
     background: url(willow-creek-wallpaper.png) no-repeat center center fixed;
     background-size: cover;
+}
+
+.container {
+    margin: 0 auto;
+    /*  Theme Option: Post Width */
+    max-width: 540px;
 }
 
 a:hover,
 a:focus-visible {
     color: var(--link-hover-color);
 }
+
+/********************************************
+ *                  THEME                   *
+ ********************************************/
 
 /* Header */
 .header {
@@ -72,24 +71,26 @@ a:focus-visible {
     border-radius: 100px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    /* Cross-browser semi-transparent border */
+    /* Cross-browser compatibility: Semi-transparent Border */
     -webkit-background-clip: padding-box; /* for Safari */
     background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
 }
 
 .header-avatar {
+    overflow: hidden;
     width: 40px;
     height: 40px;
     border-radius: 40px;
-    background-color: gray;
+    /* To delete */
+    background-color: var(--accent-color);
 }
 
-/*  Navigation */
+/*  Menu (menu-button, navigation, hexagone) */
 .menu {
     position: relative;
     display: flex;
     padding-left: 36px;
-    padding-right: 80px;
+    padding-right: 70px;
     background-color: rgba(var(--primary-color-rgb), .5);
 }
 
@@ -99,6 +100,7 @@ a:focus-visible {
     bottom: 13px;
     color: var(--accent-color);
 }
+
 .navigation ul {
     display: flex;
     font-size: 20px;
@@ -106,7 +108,7 @@ a:focus-visible {
 
 .navigation a {
     display: inline-block;
-    padding: 12px 8px 8px;
+    padding: 12px 10px 10px;
 }
 
 .hexagone {
@@ -124,7 +126,7 @@ a:focus-visible {
 }
 
 /* Posts */
-.post-container {
+.posts-container {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -133,7 +135,10 @@ a:focus-visible {
 
 .post {
     max-width: 100%;
-    /* background-color: var(--primary-color); */
+    /* Theme Option: Solid Background Color for Posts */
+    background-color: var(--primary-color);
+
+    /* Theme Option: See-through Background Color for Posts */
     background-color: rgba(var(--primary-color-rgb), .5);
     height: 300px;
 }
@@ -173,8 +178,24 @@ a:focus-visible {
 }
 
 .post-action {
-    background-color: #FFFFFF;
+    background-color: var(--primary-color);
     padding: 8px;
+}
+
+/* Hide default tumblr buttons */
+.post-action .like_button,
+.post-action .reblog_button {
+    position: absolute;
+    top: 0;
+    left: 0; 
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    opacity: 0.000001;
+}
+
+.post-action iframe {
+    width: 100% !important; height: 100% !important;
 }
 
 /* Pagination */
@@ -196,8 +217,8 @@ a:focus-visible {
     text-align: center;
 }
 
-/*  Footer */
-.footer {
+/*  Live Mode Controls (footer) */
+.live-mode-controls {
     position: fixed;
     z-index: 10;
     bottom: 0;
@@ -212,13 +233,13 @@ a:focus-visible {
     background-color: rgba(var(--primary-color-rgb), .5);
 }
 
-/*  Sims Info */
-.sims-info {
+/*  Sim Panel */
+.sim-panel {
     flex-shrink: 0;
     padding-left: 80px;
 }
 
-.sims-info::before {
+.sim-panel::before {
     content: "";
     position: absolute;
     left: 0;
@@ -228,7 +249,7 @@ a:focus-visible {
     height: 250px;
 }
 
-.sims-info::after {
+.sim-panel::after {
     content: "";
     position: absolute;
     bottom: 35px;
@@ -237,12 +258,14 @@ a:focus-visible {
     background-color: rgba(var(--primary-color-rgb), .5);
 }
 
-.sims-info-avatar {
+/* Sim Panel: Avatar */
+.sim-panel-avatar {
     position: absolute;
     bottom: -8px;
 }
 
-.emotion {
+/* Sim Panel: Emotion */
+.sim-panel-emotion {
     position: absolute;
     bottom: 35px;
     z-index: 20;
@@ -286,7 +309,7 @@ a:focus-visible {
     background: radial-gradient(150.5% 145.97% at 0% 100%, #7D8884 0%, rgba(125, 136, 132, 0.80) 36.56%, rgba(125, 136, 132, 0.60) 54.69%, rgba(56, 63, 60, 0.00) 65.63%); 
 }
 
-.emotion span {
+.sim-panel-emotion span {
     position: absolute;
     bottom: -24px;
     padding-top: 12px;
@@ -306,44 +329,34 @@ a:focus-visible {
 }
 
 
-.info {
+/* Sim Info */
+.sim-panel-info {
     overflow-y: hidden;
     display: flex;
     align-items: center;
-    /* padding: 6px 12px; */
-    /* background-color: rgba(var(--primary-color-rgb), .5); */
     border-top-right-radius: 20px;
 }
 
-.info span {
+.sim-panel-info span {
     height: 100%;
     background-color: rgba(var(--primary-color-rgb), .5);
 }
 
-.info > span:first-child {
+.sim-panel-info > span:first-child {
     padding: 4px 12px;
     font-size: 40px;
 }
 
-.info > span:nth-child(2) {
+.sim-panel-info > span:nth-child(2) {
     padding: 10px 16px 10px 12px;
     max-height: 40px;
     font-size:24px;
     font-weight: 300;
 }
 
-.info .border {
+.sim-panel-info .border {
     border-right: 2px solid transparent;
-    /* Cross-browser semi-transparent border */
+    /* Cross-browser compatibility: Semi-transparent border */
     -webkit-background-clip: padding-box; /* for Safari */
     background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
 }
-
-/* .sims-info::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    background-color: red;
-    width: 80px;
-    height: 250px;
-} */
