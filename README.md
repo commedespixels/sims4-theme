@@ -17,7 +17,7 @@
 
 |                      |                                                                                                   |
 |----------------------|---------------------------------------------------------------------------------------------------|
-| 🕵️ Who's that Sim?   | Add your name and extremly short bio (or whatever you want)                                       |
+| 🕵️ Who's that Sim?   | Add your name and extremely short bio (or whatever you want)                                       |
 | 📸 Show your Simself | Upload an image of your simself or anything really (png, transparent background, 240px by 240px)  |
 | 🫥 Pick an emotion!  | Choose between 10 premade emotions or make you own!                                               |
 
